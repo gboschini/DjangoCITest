@@ -4,9 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'whoami'
-                sh 'docker info'
+                sh 'docker-compose build'
             }
         }
+        stage('Test') {
+            steps {
+                sh 'docker-compose run web py.test'
+            }
+        }        
     }
 }
