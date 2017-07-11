@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'whoami'
-                sh 'docker images'
+                sh 'docker info'
             }
         }
     }
