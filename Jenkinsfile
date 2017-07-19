@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Django') {
             steps {
-                sh 'docker-compose run web manage.py'
+                sh 'docker-compose run web ./manage.py'
             }
         }        
         stage('Test') {
